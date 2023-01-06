@@ -1,3 +1,33 @@
+<p class="getUrl" >getUrl</p>
+<p class="getUrl" >getUrl</p>
+<p class="getUrl" >getUrl</p>
+<p class="getUrl" >getUrl</p>
+
+<script>
+
+// change all urls dynamically
+class setDyanamicUrl{
+    constructor(oldUrl){
+        this.oldUrl = oldUrl;
+    }
+    getNewUrl(){                
+        var changeValue = this.oldUrl.indexOf("development.ikf.in"); // find domain.
+        var newUrl = window.location.origin.split("/")[2];
+        this.oldUrl[changeValue] = newUrl+'.com';                
+        var changes  = document.getElementsByClassName("getUrl"); // Change class name
+        for(let l=0; l<changes.length;l++){
+            changes[l].innerHTML= this.oldUrl.join("/");
+
+        }
+
+    }
+}
+var url = window.location.origin;
+var oldUrl = url.split("/");
+obj = new setDyanamicUrl(oldUrl);
+obj.getNewUrl()
+// change all urls dynamically
+
 
 // get dyanamic url in webpage 
 class setDyanamicUrl{
@@ -18,3 +48,5 @@ var oldUrl = url.split("/");
 obj = new setDyanamicUrl(oldUrl);
 obj.getNewUrl()
 // get dyanamic url in webpage 
+
+</script>

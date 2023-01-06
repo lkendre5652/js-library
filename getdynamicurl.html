@@ -1,0 +1,20 @@
+
+// get dyanamic url in webpage 
+class setDyanamicUrl{
+    constructor(oldUrl){
+        this.oldUrl = oldUrl;
+    }
+    getNewUrl(){                
+        var changeValue = this.oldUrl.indexOf("development.ikf.in");
+        var newUrl = window.location.origin.split("/")[2];
+        this.oldUrl[changeValue] = newUrl+'.com';        
+        //console.log(this.oldUrl);
+        document.getElementById("newUrl").innerHTML= this.oldUrl.join("/");
+        //return this.oldUrl.join("/")
+    }
+}
+var url = window.location.origin;
+var oldUrl = url.split("/");
+obj = new setDyanamicUrl(oldUrl);
+obj.getNewUrl()
+// get dyanamic url in webpage 
